@@ -1,0 +1,19 @@
+{
+    "name": "sha rinn gann",
+    "short_name": "sha rinn gann",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#333",
+    "theme_color": "#fff",
+    "orientation": "portrait",
+    "description": "test for PWA",
+    "icons": [{
+        "src": "./icon.jpg",
+        "type": "image/jpg",
+        "sizes": "120x120"
+    },{
+        "src": "./icon192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+    }]
+}

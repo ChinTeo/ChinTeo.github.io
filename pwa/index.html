@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>sha rinn gann</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="manifest" href="manifest.json">
+    </head>
+    <body>
+        <div class="app">
+            a test for PWA.
+        </div>
+        <script type="text/javascript">
+            if(navigator.serviceWorker != null) {
+                navigator.serviceWorker.register('./sw.js')
+                .then( (registration)=> {
+                    console.log(registration.scope)
+                })
+            }
+        </script>
+    </body>
+</html>
