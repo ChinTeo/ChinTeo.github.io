@@ -1,9 +1,12 @@
-const CACHE_KEY = 'v1'
-const cacheList = [
-    '/index.html',
-    '/index.css'
-]
-// // 监听 service worker 的 install 事件
+
+// const cacheList = [
+//     '/',
+//     '/index.html',
+//     '/index.css',
+//     '/serviceWorkerRegister.js',
+//     '/sw.js'
+// ]
+// 监听 service worker 的 install 事件
 // this.addEventListener('install', function (event) {
 //     // 如果监听到了 service worker 已经安装成功的话，就会调用 event.waitUntil 回调函数
 //     event.waitUntil(
@@ -14,7 +17,7 @@ const cacheList = [
 //         })
 //     )
 // })
-
+//
 this.addEventListener('fetch', function (event) {
     event.respondWith(
         caches.match(event.request).then(function (response) {
@@ -47,21 +50,21 @@ this.addEventListener('fetch', function (event) {
         })
     )
 })
-
-self.addEventListener('notificationclick', event => {
-    if (!event.action) {
-        // 没有点击在按钮上
-        console.log('Notification Click.')
-        return
-    }
-
-    switch (event.action) {
-        case 'foo-action':
-            console.log('User \'s coffee.')
-            break
-        case 'bar-action':
-        default:
-            console.log(`Unknown action clicked: '${event.action}'`)
-            break
-    }
-})
+//
+// self.addEventListener('notificationclick', event => {
+//     if (!event.action) {
+//         // 没有点击在按钮上
+//         console.log('Notification Click.')
+//         return
+//     }
+//
+//     switch (event.action) {
+//         case 'foo-action':
+//             console.log('User \'s coffee.')
+//             break
+//         case 'bar-action':
+//         default:
+//             console.log(`Unknown action clicked: '${event.action}'`)
+//             break
+//     }
+// })
