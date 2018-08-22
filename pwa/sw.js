@@ -44,27 +44,30 @@ this.addEventListener('fetch', function (event) {
                 caches.open('my-test-cache-v1').then(function (cache) {
                     cache.put(event.request, responseClone)
                 })
+                .then(() => {
+                    return self.skipWaiting();
+                })
 
                 return httpRes
             })
         })
     )
 })
+// //
+// self.addEventListener('notificationclick', event => {
+//     if (!event.action) {
+//         // 没有点击在按钮上
+//         console.log('Notification Click.')
+//         return
+//     }
 //
-self.addEventListener('notificationclick', event => {
-    if (!event.action) {
-        // 没有点击在按钮上
-        console.log('Notification Click.')
-        return
-    }
-
-    switch (event.action) {
-        case 'foo-action':
-            console.log('User \'s coffee.')
-            break
-        case 'bar-action':
-        default:
-            console.log(`Unknown action clicked: '${event.action}'`)
-            break
-    }
-})
+//     switch (event.action) {
+//         case 'foo-action':
+//             console.log('User \'s coffee.')
+//             break
+//         case 'bar-action':
+//         default:
+//             console.log(`Unknown action clicked: '${event.action}'`)
+//             break
+//     }
+// })
