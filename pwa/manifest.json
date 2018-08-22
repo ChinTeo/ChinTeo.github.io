@@ -8,7 +8,7 @@
     "orientation": "portrait",
     "description": "test for PWA",
     "icons": [{
-        "src": "./icons/custom/120x120.jpg",
+        "src": "./icons/custom/120x120.png",
         "type": "image/png",
         "sizes": "120x120"
     },{
